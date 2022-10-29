@@ -11,10 +11,9 @@ pros::Motor clamp(6, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_COUN
 pros::Motor claw(5, pros::E_MOTOR_GEARSET_18, true, pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor claw2(12, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_COUNTS);
 
-
-
-//note - change reversed values while testing with robot
-
+pros::Rotation left(18);
+pros::Rotation right(19);
+pros::Rotation back(20);
 
 
 //CONTROLLER
