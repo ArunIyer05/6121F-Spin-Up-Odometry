@@ -28,7 +28,7 @@ void on_center_button() {
 
 void initialize() {
 	pros::lcd::initialize();
-	//pros::lcd::set_text(1, "6121F Starting");
+	pros::lcd::set_text(1, "6121F Starting");
 
 	pros::lcd::register_btn1_cb(on_center_button);
 	//setPneumatics(true);
@@ -66,6 +66,7 @@ void competition_initialize() {
  * from where it left off.
  */
 void autonomous() {
+<<<<<<< HEAD
 	//odomTest();
 	//setDrive(-60,60);
 	//setDrive(10,10);
@@ -89,6 +90,11 @@ void odomTest(){
 
 }
 
+=======
+	autonSkills();
+}
+
+>>>>>>> parent of df2ea0c (Odometry)
 
 
 void rightSide(){ //gets win point on right side
@@ -321,22 +327,15 @@ void autonSkills(){
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	tareEncoders();
 	while(true){
-		double prevL = getLeftEncoder();
-		double prevR = getRightEncoder();
-		double prevS = getBackEncoder();
-		pros::delay(10);
-		double curL = getLeftEncoder();
-		double curR = getRightEncoder();
-		double curS = getBackEncoder();
-		odometryBaseCode(prevL, prevR, prevS, curL, curR, curS);
 		setDriveMotors();
-		// setIntakeMotors();
-		// //toggleIntake();
-		// setMogoMotors();
-		// setClawMotors();
-		// setClampMotors();
-		// pneumaticsOp();
+		setIntakeMotors();
+		//toggleIntake();
+		setMogoMotors();
+		setClawMotors();
+		setClampMotors();
+		pneumaticsOp();
+
+		pros::delay(10);
 	}
 }

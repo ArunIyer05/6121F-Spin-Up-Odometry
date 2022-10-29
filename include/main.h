@@ -76,7 +76,10 @@ void leftDualRush(void);
 void ringsNTings(void);
 void rushMid(void);
 void autonSkills(void);
+<<<<<<< HEAD
 void odomTest(void);
+=======
+>>>>>>> parent of df2ea0c (Odometry)
 #ifdef __cplusplus
 }
 #endif
@@ -90,7 +93,10 @@ void odomTest(void);
 #include "subsystemHeaders/claw.hpp"
 #include "subsystemHeaders/pneumatics.hpp"
 #include "subsystemHeaders/PID.hpp"
+<<<<<<< HEAD
 #include "subsystemHeaders/odometry.hpp"
+=======
+>>>>>>> parent of df2ea0c (Odometry)
 //#include <iostream>
 #endif
 
