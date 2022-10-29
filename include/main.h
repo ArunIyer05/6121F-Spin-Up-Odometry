@@ -68,16 +68,27 @@ void initialize(void);
 void disabled(void);
 void competition_initialize(void);
 void opcontrol(void);
-
-void odomTest(void);
+void rightSide(void);
+void leftSide(void);
+void leftSide2(void);
+void rush(void);
+void leftDualRush(void);
+void ringsNTings(void);
+void rushMid(void);
+void autonSkills(void);
 #ifdef __cplusplus
 }
 #endif
 
 #ifdef __cplusplus
 #include "subsystemHeaders/globals.hpp"
+#include "subsystemHeaders/intake.hpp"
 #include "subsystemHeaders/drive.hpp"
-#include "subsystemHeaders/odometry.hpp"
+#include "subsystemHeaders/mogolift.hpp"
+#include "subsystemHeaders/clamp.hpp"
+#include "subsystemHeaders/claw.hpp"
+#include "subsystemHeaders/pneumatics.hpp"
+#include "subsystemHeaders/PID.hpp"
 //#include <iostream>
 #endif
 

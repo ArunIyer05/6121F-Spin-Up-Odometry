@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-pros::ADIDigitalOut clampClaw('D');
+pros::ADIDigitalOut clampClaw('A');
 
 bool isMogoClamped = false; //false is out, true is active clamp
 bool mogoButtPress = false;
