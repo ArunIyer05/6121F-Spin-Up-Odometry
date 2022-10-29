@@ -76,6 +76,7 @@ void leftDualRush(void);
 void ringsNTings(void);
 void rushMid(void);
 void autonSkills(void);
+void odomTest(void);
 #ifdef __cplusplus
 }
 #endif
@@ -89,6 +90,7 @@ void autonSkills(void);
 #include "subsystemHeaders/claw.hpp"
 #include "subsystemHeaders/pneumatics.hpp"
 #include "subsystemHeaders/PID.hpp"
+#include "subsystemHeaders/odometry.hpp"
 //#include <iostream>
 #endif
 

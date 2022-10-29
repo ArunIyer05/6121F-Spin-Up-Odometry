@@ -28,7 +28,7 @@ void on_center_button() {
 
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "6121F Starting");
+	//pros::lcd::set_text(1, "6121F Starting");
 
 	pros::lcd::register_btn1_cb(on_center_button);
 	//setPneumatics(true);
@@ -66,7 +66,27 @@ void competition_initialize() {
  * from where it left off.
  */
 void autonomous() {
-	autonSkills();
+	//odomTest();
+	//setDrive(-60,60);
+	//setDrive(10,10);
+	// tareEncoders();
+	// while(true){
+	// 	pros::lcd::clear_line(1);
+	// 	pros::lcd::set_text(1, "theta: " + std::to_string(theta() *(180/3.141592653589793238)));
+	// 	pros::lcd::set_text(2, "posX: " + std::to_string(localX()));
+	// 	pros::lcd::set_text(3, "posZ: " + std::to_string(localZ()));
+	// 	pros::delay(10);
+	// }
+	// setDrive(-60,60);
+	// while(true){
+	// 	deltaTheta();
+	// 	pros::delay(10);
+	// }
+}
+
+void odomTest(){
+	tareEncoders();
+
 }
 
 
@@ -301,15 +321,22 @@ void autonSkills(){
  * task, not resume it from where it left off.
  */
 void opcontrol() {
+	tareEncoders();
 	while(true){
-		setDriveMotors();
-		setIntakeMotors();
-		//toggleIntake();
-		setMogoMotors();
-		setClawMotors();
-		setClampMotors();
-		pneumaticsOp();
-
+		double prevL = getLeftEncoder();
+		double prevR = getRightEncoder();
+		double prevS = getBackEncoder();
 		pros::delay(10);
+		double curL = getLeftEncoder();
+		double curR = getRightEncoder();
+		double curS = getBackEncoder();
+		odometryBaseCode(prevL, prevR, prevS, curL, curR, curS);
+		setDriveMotors();
+		// setIntakeMotors();
+		// //toggleIntake();
+		// setMogoMotors();
+		// setClawMotors();
+		// setClampMotors();
+		// pneumaticsOp();
 	}
 }
